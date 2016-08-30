@@ -1,8 +1,6 @@
 // 8: block scope - const
 // To do: make all tests pass, leave the asserts unchanged!
 
-var assert = require("assert");
-
 describe('`const` is like `let` plus read-only', () => {
 
   describe('scalar values are read-only', () => {
@@ -31,14 +29,14 @@ describe('`const` is like `let` plus read-only', () => {
 
     it('array', () => {
       const arr = [42, 23];
-      arr[0] = 0;
-      assert.equal(arr[0], 0);
+      arr[0] = 42;
+      assert.equal(arr[0], 42);
     });
 
     it('object', () => {
       const obj = {x: 1};
-      obj.x = 2;
-      assert.equal(obj.x, 2);
+      obj.x = 3;
+      assert.equal(obj.x, 3);
     });
 
   });
